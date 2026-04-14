@@ -106,4 +106,11 @@ public class StreamPractice {
         return words.stream()
                 .collect(Collectors.groupingBy(String::length));
     }
+
+    private static Long countWordsStartingWithA(List<String> names) {
+
+        return names.stream()
+                .filter(name -> name.startsWith("А"))
+                .count();
+    }
 }
