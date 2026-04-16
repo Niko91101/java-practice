@@ -14,6 +14,8 @@ public class AlgorithmsPractice {
 
         System.out.println(isPalindrome2("racecars"));
 
+        findMinAndMaxNumbers(nums);
+
     }
 
     private static int[] findIntsToSum(int[] nums, int targetSum) {
@@ -77,5 +79,23 @@ public class AlgorithmsPractice {
         }
 
         return true;
+    }
+
+    private static void findMinAndMaxNumbers(int[] nums) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+
+            if (nums[i] > max) {
+                max = nums[i];
+            }
+        }
+
+        System.out.println("min = " + min);
+        System.out.println("max = " + max);
     }
 }
