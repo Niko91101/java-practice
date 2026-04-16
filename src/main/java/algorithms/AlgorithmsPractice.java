@@ -12,6 +12,8 @@ public class AlgorithmsPractice {
         System.out.println(Arrays.toString(findIntsToSum(nums, target)));
         System.out.println(Arrays.toString(findIntsToSum2(nums, target)));
 
+        System.out.println(isPalindrome2("racecars"));
+
     }
 
     private static int[] findIntsToSum(int[] nums, int targetSum) {
@@ -41,7 +43,39 @@ public class AlgorithmsPractice {
 
             map.put(nums[i], i);
         }
-
         throw new IllegalArgumentException("No solution");
+    }
+
+    private static boolean isPalindrome(String str1) {
+        return str1.equals(new StringBuilder(str1).reverse().toString());
+    }
+
+    private static boolean isPalindrome2(String str) {
+
+        char[] chars = str.toCharArray();
+
+        for (int i = 0; i < chars.length / 2; i++) {
+            if (chars[i] != chars[chars.length - i - 1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static boolean isPalindromeWithWhile(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
     }
 }
