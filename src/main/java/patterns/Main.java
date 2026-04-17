@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SingletonPractice s1 = SingletonPractice.getInstance();
-        SingletonPractice s2 = SingletonPractice.getInstance();
+        LoggerSingleton logger = LoggerSingleton.getInstance();
 
-        System.out.println(s1 == s2);
+        logger.log("User is here!");
+        logger.log("User exited");
     }
 }
