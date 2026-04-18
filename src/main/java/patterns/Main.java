@@ -4,9 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LoggerSingleton logger = LoggerSingleton.getInstance();
+        User user = new User.Builder()
+                .name("Stas")
+                .age(20)
+                .email("mez2")
+                .build();
 
-        logger.log("User is here!");
-        logger.log("User exited");
+        System.out.println(user.toString());
+
     }
 }
