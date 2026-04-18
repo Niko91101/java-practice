@@ -1,8 +1,22 @@
 package oop.practice;
 
 public class Dog extends Animal implements Trainable {
-    public Dog(String name) {
-        super(name);
+
+    private Dog(Builder builder) {
+        super(builder.name);
+    }
+
+    public static class Builder {
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Animal build() {
+            return new Dog(this);
+        }
     }
 
     @Override
