@@ -113,4 +113,12 @@ public class StreamPractice {
                 .filter(name -> name.startsWith("А"))
                 .count();
     }
+
+    private static List<Integer> uniqueNumbers(List<Integer> numbers) {
+        return numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .distinct()
+                .sorted()
+                .toList();
+    }
 }
