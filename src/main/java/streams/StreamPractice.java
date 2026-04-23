@@ -121,4 +121,11 @@ public class StreamPractice {
                 .sorted()
                 .toList();
     }
+
+    private static String maxLengthString(List<String> words) {
+
+        return words.stream()
+                .max(Comparator.comparingInt(String::length))
+                .orElseThrow(() -> new IllegalArgumentException("Список пустой"));
+    }
 }
