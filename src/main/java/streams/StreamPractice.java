@@ -128,4 +128,10 @@ public class StreamPractice {
                 .max(Comparator.comparingInt(String::length))
                 .orElseThrow(() -> new IllegalArgumentException("Список пустой"));
     }
+
+    private static Long uniqueWordsCount(List<String> words) {
+        return words.stream()
+                .distinct()
+                .count();
+    }
 }
