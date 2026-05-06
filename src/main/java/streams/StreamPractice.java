@@ -1,9 +1,6 @@
 package streams;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamPractice {
@@ -133,5 +130,11 @@ public class StreamPractice {
         return words.stream()
                 .distinct()
                 .count();
+    }
+
+    private static Integer sumValues(Map<String, Integer> words) {
+        return words.values().stream()
+                .mapToInt(Integer::intValue)
+                .sum();
     }
 }
